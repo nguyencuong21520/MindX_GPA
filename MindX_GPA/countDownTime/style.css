@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+#particles-js {
+  height: 100%;
+  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+  background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+}
+
+#logo {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 200px;
+}
+
+.main{
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.wrapper{
+  height: 60%;
+  width: 100%;
+
+}
+.wrapper h1{
+  text-align: center;
+}
+.el-wapper{
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0px;
+}
+.el-wapper .card{
+  width: 20%;
+  height: 500px;
+  background-color: transparent;
+  border: none;
+  
+}
+
+.timer {
+  font-size: 10em;
+  padding: 10px;
+  text-align: center;
+  color: whitesmoke;
+}
