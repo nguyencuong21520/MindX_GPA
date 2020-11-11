@@ -6,5 +6,8 @@ const model = {
     },
     saveCurrentteam(team){
         model.currentTem = team
+    },
+    pushDataToListTeam(data){
+        model.listTeam.push(data)
     }
 }
