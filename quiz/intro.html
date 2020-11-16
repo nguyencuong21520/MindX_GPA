@@ -15,7 +15,7 @@
 </head>
 
 <body id="particles-js">
-    <div style="position: absolute;">
+    <div style="position: absolute; width: 100%">
         <div class="nav">
             <img id="logo" src="https://mindx.edu.vn/images/logo_white.png">
         </div>
@@ -25,51 +25,27 @@
                 <div class="col-8 fullheight bg-red">
                     <div class="rule-wrapper">
                         <div class="title">
-                            <p>Chào mừng các bạn đã đến với trạm MindX</p>
-                            <p style="color: white;text-align:center; font-size:25px">Hãy chú ý những điều dưới đây để
-                                có
-                                thể giải cứu các nhà khoa học nhé</p>
+                            <p>Wellcome to <span class="autoText"></span></p>
+                            <p style="color: white;text-align:center; font-size:17px">Hãy đọc bản hướng dẫn dưới</p>
                         </div>
                         <div class="rule">
                             <div class="r1 left-to-right">
-                                <p><i class="fad fa-pennant"></i>Lorem ipsum, dolor sit amet consectetur adipisicing
-                                    elit.
-                                    Nisi ullam eum necessitatibus fugit repellendus illo consequatur voluptatibus
-                                    aliquam
-                                    earum! Maxime iste veritatis ipsum, nam aliquid dolor optio quos natus quia.</p>
+                                <p><img height="50px" src="./img/loading-2x.gif">Cac ban se co toi da 10 phut de tra loi 5 cau hoi, thoi gian cho moi cau hoi la 120s</p>
                             </div>
                             <div class="r2 left-to-right">
-                                <p><i class="fad fa-pennant"></i>Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.
-                                    Officia tenetur amet ipsum molestiae consequatur, dolor quasi sequi quisquam dolores
-                                    earum nemo cum excepturi impedit, labore, nostrum nam tempora dolorem ullam!</p>
+                                <p><img height="50px" src="./img/loading-2x.gif">O moi moc thoi gian nhat dinh ban se nhan duoc goi y, hay tan dung no va hoan thanh cau hoi</p>
                             </div>
                             <div class="r3 left-to-right">
-                                <p><i class="fad fa-pennant"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.
-                                    Officiis accusamus similique, accusantium quaerat rerum facere vel pariatur,
-                                    provident
-                                    adipisci voluptate sapiente iusto deserunt amet laborum, voluptatum dolore
-                                    repellendus
-                                    hic error.</p>
+                                <p><img height="50px" src="./img/loading-2x.gif">Neu ban khong tra loi duoc ? 10s cuoi cung dap an se xuat hien, luc nay hay co gang type that nhanh de lay diem</p>
                             </div>
                             <div class=" r4 left-to-right">
-                                <p><i class="fad fa-pennant"></i>Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit.
-                                    Nemo quas asperiores, architecto dolores vero dicta, suscipit possimus, beatae
-                                    dolore
-                                    nesciunt unde odit omnis porro cumque mollitia adipisci fugiat. Architecto, odio.
+                                <p><img height="50px" src="./img/loading-2x.gif"> remember note the answers on paper 
                                 </p>
                             </div>
                         </div>
                         <div></div>
-                        <div class="r5 input-idTeam down-to-up">
-                            <div class="buscar-caja">
-                                <input type="text" name="" class="buscar-txt" placeholder="Input your id" />
-                                <a class="buscar-btn">
-                                    <i class="fal fa-keyboard"></i>
-                                </a>
-                            </div>
+                        <div style="text-align: center;" class="r5 input-idTeam down-to-up">
+                            <a href="#" class="button">Are you ready   <i class="fas fa-chevron-double-right"></i></a>
                         </div>
 
 
@@ -81,8 +57,8 @@
                     <div class="product-img">
                         <div class="img-wrapper">
                             <div class="bounce">
-                                <!-- <img src="./img/spaces_-MJ3-diUp-gxuyf_wwsg_avatar-1604894864018.png" alt="MindX logo"> -->
-                                <img src="./img/Anonymous Mask icon 1.png" alt="MindX logo">
+                                <img src="./img/spaces_-MJ3-diUp-gxuyf_wwsg_avatar-1604894864018.png" alt="MindX logo">
+                                <!-- <img src="./img/Anonymous Mask icon 1.png" alt="MindX logo"> -->
                             </div>
                         </div>
                     </div>
@@ -91,7 +67,7 @@
         </div>
     </div>
 
-
+    <script src="../packet/typed.min.js"></script>
     <script>
         let rule1 = document.querySelector('.r1')
         let rule2 = document.querySelector('.r2')
@@ -113,7 +89,17 @@
         setTimeout(() => {
             rule5.classList.add('active1')
         }, 5000)
+
+        var typed = new Typed('.autoText', {
+            strings: ['<strong style="color:#c00000">MindX station</strong>', 'Moskow station'],
+
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop:true,
+            backDelay: 1500,
+          });
     </script>
+    
     <script src="../packet/particles.js"></script>
     <script src="../packet/app.js"></script>
 </body>
