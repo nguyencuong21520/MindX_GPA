@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellcome</title>
+    <link rel="icon" href="./img/spaces_-MJ3-diUp-gxuyf_wwsg_avatar-1604894864018.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+</head>
+
+<body id="particles-js">
+    <div style="position: absolute; width: 100%">
+        <div class="nav">
+            <img id="logo" src="./img/logo_white.png">
+        </div>
+            <div class="input-container">
+                <div class="just-title">
+                    <div class="just-title-left">
+                        <img class="bounce" src="./img/loading-2x.gif" alt="">
+                    </div>
+                    <div class="just-title-right">
+                        <h2>Hi, there! <span class="autoText_2"></span></h2>
+                        <h2>Can You Hack Me?</h2>
+                        <weird-input name="test" v-model="message"></weird-input>
+                    </div>
+                </div>
+                <form class="" action="submit">
+                    <h3 style="text-align: center; color:#fff">Enter Your Team ID To Accept The Challenge</h3>
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="Your ID" name="id" id='name' required />
+                        <label for="name" class="form__label">Your ID</label>
+                    </div>
+                    <div id="show_error"></div>
+                    <div style="margin: 40px auto; width: 100%; text-align: center">
+                        <button href="#" class="button gradient-border">Let start <i class="fas fa-chevron-double-right"></i></button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="../packet/typed.min.js"></script>
+    <script src="../packet/particles.js"></script>
+    <script src="../packet/app.js"></script>
+    <script>
+        var typed = new Typed('.autoText_2', {
+            strings: ['<strong style="color:#c00000">MindXer</strong>',
+                '<strong style="color:#44bd32">Hacker NVC</strong>'
+            ],
+
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true,
+            backDelay: 1500,
+        });
+    </script>
+</body>
+
+</html>

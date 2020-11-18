@@ -29,8 +29,9 @@ body{
     height: 100vh;
     /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
     /* background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
-    /* background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg); */
-    background-image: url(./img/fd2a12a5892e13d5e10b455d7e25f74e.jpg);
+    background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg);
+    /* background-image: url(./img/fd2a12a5892e13d5e10b455d7e25f74e.jpg); */
+    /* background-image: linear-gradient(to left bottom, #c00000, #c1261f, #c03b36, #bd4d4a, #b85d5d); */
   
   }
 /* *{
@@ -48,7 +49,7 @@ html {
     position: absolute;
     right: 15px;
     top: 15px;
-    width: 200px;
+    width: 250px;
   }
 .row {
     display: flex;
@@ -251,7 +252,10 @@ html {
       text-decoration: none;
       font-family: Arial, Helvetica, sans-serif;
   }
-
+button{
+    outline: none;
+    border: none;
+}
 
 .bounce {
     animation-name: bounce;
@@ -273,3 +277,133 @@ html {
         transform: translateY(0);
     }
 }
+
+/* inputId */
+.input-container{
+    height: 400px;
+    width: 50%;
+    background-color: #222;
+    transform: translateY(50%);
+    margin: auto;
+    padding: 20px;
+}
+.just-title{
+
+    height: 120px;
+    display: flex;
+    color: white;
+}
+.just-title-left{
+    width: 30%;
+    height: 100%;
+
+    text-align: center;
+}
+.just-title-left img{
+    height: 90%;
+    padding: 5px ;
+}
+.just-title-right{
+    width: 70%;
+
+}
+/* .input_style{
+    height: 40px;
+    width: 320px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+} */
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field::placeholder {
+    color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, rgb(134, 62, 62),#c00000);
+    border-image-slice: 1;
+  }
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #c00000;
+    font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+
+  .gradient-border {
+    --border-width: 3px;
+
+    justify-content: center;
+    align-items: center;
+    font-family: Lato, sans-serif;
+    color: white;
+    background: #222;
+    border-radius: var(--border-width);
+  }
+  .gradient-border::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
