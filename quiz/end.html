@@ -28,7 +28,7 @@
         <p style="color:white ; font-size:40px">Chúc mừng bạn đã hoàn thành</p>
         <div class="w1">
             <h1>MindX Team</h1>
-            <h2>Score: 1500</h2>
+            <h2 id="score">Score:</h2>
             <h2>Time: 200s</h2>
             <div>
                 
@@ -61,6 +61,12 @@
         }, 1000)
     </script>
     <script>
+		let point = localStorage.getItem('point')
+		if(point){
+			document.querySelector('#score').innerText =`Score: ${point}`
+		}
+
+
         // Define our selectors
 var $clock 		= $("#clock");
 var $timer 		= $("#timer");

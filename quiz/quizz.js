@@ -4,6 +4,8 @@ const level = urlParams.get("level");
 const id = urlParams.get("id");
 const questionsEl = document.querySelector("#questions");
 const goHomeEl = document.querySelector('#go_home');
+const btn_next = document.querySelector('.q-btn')
+var point = 0
 
 function getQuizz(lv, id, callback) {
   const url = `https://limitless-headland-02051.herokuapp.com/${lv}/${id}`;
@@ -11,6 +13,7 @@ function getQuizz(lv, id, callback) {
     .then((res) => res.json())
     .then((data) => {
       callback(data);
+      checkAns(data)
     })
     .catch((err) => console.log(err));
 }
@@ -73,7 +76,7 @@ function generatorAns(ans) {
   for (let i = 0; i < ans.length; i++) {
     ansHTML += `
         <label class="ans-wrap">
-            <input class="ans" type="radio" name="r-1" />
+            <input class="ans" value='${ans[i].isCorrect}' type="radio" name="r-1" />
             <span class="ans-text">${ans[i].answerText}</span>
         </label>
         `;
@@ -86,10 +89,19 @@ function generatorAns(ans) {
 goHomeEl.addEventListener('click', () => {
   // Chekc ans 
   // do something
-
+  localStorage.setItem('point',point)
   // back to the homepage
   window.location.href = "./end.html"
 })
+let checkAns = (data) =>{btn_next.addEventListener('click',()=>{
+  // let ans = (document.querySelector('input[name=' + 'r-1' + ' ]:checked').parentElement).textContent.trim()
+  let ans = document.querySelector('input[name=' + 'r-1' + ' ]:checked').value
+  if(ans == 'true')
+  {
+    point++
+    console.log(point)
+  }
+})}
 
 async function main() {
   await getQuizz(level, id, generatorQuizz);
