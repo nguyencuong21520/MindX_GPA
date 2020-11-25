@@ -3,6 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const level = urlParams.get("level");
 const id = urlParams.get("id");
 const questionsEl = document.querySelector("#questions");
+const goHomeEl = document.querySelector('#go_home');
 
 function getQuizz(lv, id, callback) {
   const url = `https://limitless-headland-02051.herokuapp.com/${lv}/${id}`;
@@ -34,7 +35,6 @@ function generatorQuizz(quizzs) {
             `;
     } else if (i === quizzs.length - 1) {
       const ans = generatorAns(quizzs[i].answerOptions);
-      console.log(quizzs[i].image);
       generatorHTML += `
             <div class="question q-${i + 1} q-last">
                 <div class="q-title">${quizzs[i].questionText}</div>
@@ -66,14 +66,6 @@ function generatorQuizz(quizzs) {
     }
   }
   questionsEl.insertAdjacentHTML("afterbegin", generatorHTML);
-  // selector quizzs
-  let isChose = selectorAns();
-  isChose.forEach((item, index) => {
-    item.addEventListener("click", (e) => {
-      let ans = item.parentElement.children[1].innerText;
-      handleAnswerOptionClick(quizzs, ans);
-    });
-  });
 }
 
 function generatorAns(ans) {
@@ -89,30 +81,16 @@ function generatorAns(ans) {
   return ansHTML;
 }
 
-// check quizz
+// Go back to the homepage, and you can check the answer here
 
-let score = 0,
-  showScore = false;
+goHomeEl.addEventListener('click', () => {
+  // Chekc ans 
+  // do something
 
-function handleAnswerOptionClick(questions, ans) {
-  let isCorrect = false;
-  console.log(questions);
-  console.log(ans);
-  // if (isCorrect) {
-  //   score += 1;
-  // }
-  // const nextQuestion = currentQuestion + 1;
-  // if (nextQuestion < questions.length) {
-  //   currentQuestion = nextQuestion;
-  // } else {
-  //   showScore = true;
-  // }
-}
-
-function selectorAns() {
-  let ans = document.getElementsByClassName("ans");
-  return [...ans];
-}
+  // back to the homepage
+  alert('hahhaha')
+  window.location.href = "./inputid.html"
+})
 
 async function main() {
   await getQuizz(level, id, generatorQuizz);
