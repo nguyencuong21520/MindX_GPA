@@ -16,7 +16,7 @@ const controller = {
   removeControl: () => {
     let data = model.listTeam
     for (let i in data) {
-      let dom = document.querySelector(`#bt${i}`)
+      let dom = document.querySelector(`#bt${data[i].id}`)
       dom.addEventListener('click', () => {
         controller.removeOnFB(model.listTeam[i].id)
       })
@@ -33,7 +33,7 @@ const controller = {
         return
       }
       await controller.getData()
-      view.showTimer(model.listTeam)
+     await view.showTimer(model.listTeam)
 
 
       
