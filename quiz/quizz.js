@@ -88,8 +88,7 @@ goHomeEl.addEventListener('click', () => {
   // do something
 
   // back to the homepage
-  alert('hahhaha')
-  window.location.href = "./inputid.html"
+  window.location.href = "./end.html"
 })
 
 async function main() {

@@ -34,9 +34,9 @@
     <script>
       var dom = document.querySelector("#dom");
       var input = `        <div style="position: absolute; width: 100%">
-            <div class="nav">
-                <img id="logo" src="./img/logo_white.png">
-            </div>
+        <div class="nav">
+          <a href="./start.html"><img id="logo" src="./img/logo_white.png"></a>
+      </div>
             <div class="input-container">
                 <div class="just-title">
                     <div class="just-title-left">
@@ -104,7 +104,9 @@
               $(".loader span").html(num + "%");
 
               if (num == 100) {
+
                 dom.innerHTML = input;
+                
                 var typed = new Typed(".autoText_2", {
                   strings: [
                     '<strong style="color:#c00000">I Am MindXer</strong>',

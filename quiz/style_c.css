@@ -283,12 +283,13 @@ button{
 .input-container{
     height: 400px;
     width: 50%;
-    background-color: #222;
-    transform: translateY(50%);
+    background-color: rgba(65, 64, 74, 0.9);  
     margin: auto;
     padding: 10px;
+    transform: translateY(50%);
     transition: 2s;
 }
+
 .input-container:hover{
     width: 60%;
     transition: 10s;
@@ -476,6 +477,9 @@ button{
     transform: translate(20%,15%);
 
   }
+  .container_end >*{
+    text-align: center;
+  }
   .code_t2{
     height: 70px;
     width: 200px;
@@ -517,14 +521,58 @@ button{
   .countdown_time{
     width: 200px;
     height: 200px;
-    background-color: #0575E6;
     position: absolute;
     top: 30%;
     left: -100%;
   }
 .activet{
-    transition: 2s;
+    transition: 1s;
     left: 10%;
 }
 
-  
+#clock_wrapper {
+  position: absolute;
+  top: 1em;
+  left: 2em;
+}
+
+#clock {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 500%;
+  text-align: center;
+  width: 200px;
+  z-index: 2;
+  padding-top: 25%;
+  color: #000;
+  transition: opacity 350ms linear 0s;
+  -webkit-transition: opacity 350ms linear 0s;
+}
+
+.half_opacity {
+  opacity:0.5;
+}
+#b{
+    font-size: 175%;
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    top:-30%;
+    width: 270px;
+    text-align: center;
+    color: #fff;
+}
+.start{
+
+  position: absolute;
+  top: 45%;
+  left: 40%;
+}

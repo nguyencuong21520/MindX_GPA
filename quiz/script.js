@@ -5,6 +5,7 @@ $(".start-survey").click(function (event) {
 $(".q-btn").click(function (event) {
   event.preventDefault();
   nextQuestion();
+  co
 });
 $(".question").on("change", "input", function () {
   $(".question.q-active .ans-wrap").removeClass("ans-selected");
