@@ -467,9 +467,7 @@ button{
       transform: rotate(-90deg);
     }
   }
-  h1,h2,h3,p{
-    text-align: center;
-  }
+
   .container_end{
 
     height: 80vh;
