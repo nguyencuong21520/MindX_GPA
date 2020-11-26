@@ -23,7 +23,17 @@ function generatorQuizz(quizzs) {
   for (let i = 0; i < quizzs.length; i++) {
     if (i == 0) {
       const ans = generatorAns(quizzs[i].answerOptions);
+
+
+      
+
+
+
       generatorHTML += `
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 5fe6c6876ce6007a3d65e873886f131190965b18
             <div class="question q-${i + 1} q-first q-active">
                 <div class="q-title">${quizzs[i].questionText}</div>
                 ${
@@ -48,7 +58,8 @@ function generatorQuizz(quizzs) {
                     : ""
                 }
                 <div class="answers">
-                    ${ans}
+                    ${ans} 
+                    ádasdasd
                 </div>
             </div>
 
