@@ -24,6 +24,7 @@ function generatorQuizz(quizzs) {
     if (i == 0) {
       const ans = generatorAns(quizzs[i].answerOptions);
       generatorHTML += `
+      <div style=""></div>
             <div class="question q-${i + 1} q-first q-active">
                 <div class="q-title">${quizzs[i].questionText}</div>
                 ${

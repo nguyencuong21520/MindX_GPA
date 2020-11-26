@@ -11,7 +11,7 @@ const view = {
         //     };
         // }, 1000);      
         let dom = document.querySelector('.el-wapper')
-        
+    
         dom.innerHTML =''
 
         for (let i = 0; i < data.length; i++) {
@@ -20,6 +20,7 @@ const view = {
       <h1 style="text-align: center">${data[i].name}</h1>
      <div style="text-align: center;"><button id="bt${data[i].id}" type="button" class="btn btn-success">Remove</button></div>   
      </div>`
+
             dom.innerHTML += html
             let D = new Date().getTime()
             distance = (data[i].timer + 60 * 1000) - D
@@ -35,7 +36,5 @@ const view = {
         }
         controller.removeControl()
     },
-    test() {
-        location.reload()
-    }
+
 }
