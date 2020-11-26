@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    padding-top: 50px;
+}
+.card{
+    background-color: yellow;
+}
+@media(min-width:1000px) {
+    .card{
+        margin: 10px 20px;
+    }
+    .card-group{
+        flex-wrap: wrap;
+    }
+  }
+.bg_green{
+    background-color: forestgreen !important;
+}
+/* classList.add('bg_green') */
