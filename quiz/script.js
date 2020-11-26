@@ -18,10 +18,25 @@ function startQuiz() {
     $(".survey-intro").hide();
     $("#q-loader").hide();
     $(".survey-questions").show();
+
+
+    //show clock
+    $("#clock").show();
+
+    //countdown
+    window.count = 30
+      console.log(count)
+      //document.getElementById("clock").innerHTML = time
+      window.time = setInterval(function(){
+        document.getElementById("clock").innerHTML = count
+        count--
+        if (count < 0) clearInterval(time)
+    },1000) 
   }, 500);
 }
 
 function nextQuestion() {
+  window.count = 30
   if ($(".question.q-active .ans").is(":checked")) {
     $("#q-loader").show();
     setTimeout(function () {
