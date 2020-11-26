@@ -79,7 +79,7 @@ var $continue 	= $("#continue");
 $(function(){
 	$start.on("click",function(e){
 		e.preventDefault();
-		beginTimer(60000); // 60 seconds
+		beginTimer(5000); // 60 seconds
 		
 		$start.hide();	
 		$pause.show();	
@@ -112,7 +112,7 @@ $(function(){
 	});
 	
 	// Start clock face on page load
-	beginTimer(30000);
+	beginTimer(5000);
 });
 
 // Change timer face colour
@@ -203,7 +203,7 @@ function countDownClock(dteStart,timer)
 	}
 					
 	if(window.intOffset <= 0) // If time is up
-    window.open('./start.html','_blank');
+    restetF()
 	else // Resersive ahoy!
 		window.t = setTimeout("countDownClock(" + dteStart + "," + timer + ")",50);
 }
@@ -215,6 +215,9 @@ function timeUp()
 	$pause.hide();	
 	$continue.hide();	
 }
+let restetF = () => {
+	window.open('./start.html');
+  }
     </script>
 </body>
 
