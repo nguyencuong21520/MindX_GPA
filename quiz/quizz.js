@@ -5,7 +5,9 @@ const id = urlParams.get("id");
 const questionsEl = document.querySelector("#questions");
 const goHomeEl = document.querySelector('#go_home');
 const btn_next = document.querySelector('.q-btn')
+const btnStart = document.querySelector('.start-survey')
 var point = 0
+var index = 0
 
 function getQuizz(lv, id, callback) {
   const url = `https://limitless-headland-02051.herokuapp.com/${lv}/${id}`;
@@ -13,7 +15,8 @@ function getQuizz(lv, id, callback) {
     .then((res) => res.json())
     .then((data) => {
       callback(data);
-      checkAns(data)
+      checkAns()
+      countDownTime(data)
     })
     .catch((err) => console.log(err));
 }
@@ -23,17 +26,8 @@ function generatorQuizz(quizzs) {
   for (let i = 0; i < quizzs.length; i++) {
     if (i == 0) {
       const ans = generatorAns(quizzs[i].answerOptions);
-
-
-      
-
-
-
       generatorHTML += `
-<<<<<<< HEAD
-=======
             
->>>>>>> 5fe6c6876ce6007a3d65e873886f131190965b18
             <div class="question q-${i + 1} q-first q-active">
                 <div class="q-title">${quizzs[i].questionText}</div>
                 ${
@@ -59,7 +53,6 @@ function generatorQuizz(quizzs) {
                 }
                 <div class="answers">
                     ${ans} 
-                    ádasdasd
                 </div>
             </div>
 
@@ -81,6 +74,7 @@ function generatorQuizz(quizzs) {
             `;
     }
   }
+
   questionsEl.insertAdjacentHTML("afterbegin", generatorHTML);
 }
 
@@ -106,15 +100,50 @@ goHomeEl.addEventListener('click', () => {
   // back to the homepage
   window.location.href = "./end.html"
 })
-let checkAns = (data) =>{btn_next.addEventListener('click',()=>{
+btnStart.addEventListener('click',()=>{
+  
+})
+let checkAns = () =>{btn_next.addEventListener('click',()=>{
   // let ans = (document.querySelector('input[name=' + 'r-1' + ' ]:checked').parentElement).textContent.trim()
   let ans = document.querySelector('input[name=' + 'r-1' + ' ]:checked').value
   if(ans == 'true')
   {
     point++
-    console.log(point)
   }
 })}
+let countDownTime = (data) =>{
+  let dom1 = document.querySelector('#hint')
+  console.log("data",data)
+
+      //document.getElementById("clock").innerHTML = time
+    let  timer = setInterval(function(){
+      let index = window.index_q
+      if(index == undefined){
+        index = 0;
+      }
+        let t = window.time
+        let lengthOfHints = data[index].hints.length
+        let distand = Math.floor(20/(lengthOfHints + 1))
+        if (t == 19){
+          dom1.innerHTML = ''
+        }
+      for(let i=0; i<= lengthOfHints;i++){
+        if(t == distand*(lengthOfHints - i)){
+        // dom1.innerHTML += `<h1>${data[index].hints[i]}</h1>`
+        console.log(data[index].hints[i]["hint"+ (i+1)])
+        }
+      }
+        
+        // if( t == 15){
+          
+        //   console.log(data[index].hints[0].hint1)
+        // }
+        // if( t == 10){
+        //   dom1.innerHTML += `<h1>${data[index].hints[1].hint2}</h1>`
+        //   console.log(data[index].hints[1].hint2)
+        // }
+    },1000) 
+}
 
 async function main() {
   await getQuizz(level, id, generatorQuizz);

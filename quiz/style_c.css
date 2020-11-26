@@ -24,7 +24,8 @@
 body{
     /* background-image: url(./img/fd2a12a5892e13d5e10b455d7e25f74e.jpg); */
     /* background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
-}
+    
+  }
 #particles-js {
     height: 100vh;
     /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
@@ -32,7 +33,6 @@ body{
     background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg);
     /* background-image: url(./img/fd2a12a5892e13d5e10b455d7e25f74e.jpg); */
     /* background-image: linear-gradient(to left bottom, #c00000, #c1261f, #c03b36, #bd4d4a, #b85d5d); */
-  
   }
 /* *{
     box-sizing: border-box;
@@ -45,6 +45,7 @@ html {
     padding: 0;
     overflow: hidden;
     font-family: 'Goldman';
+    
 }
 #logo {
     position: absolute;
@@ -570,9 +571,8 @@ button{
     text-align: center;
     color: #fff;
 }
-.start{
 
+.start{
   position: absolute;
-  top: 45%;
-  left: 40%;
+
 }

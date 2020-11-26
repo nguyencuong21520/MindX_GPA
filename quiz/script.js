@@ -5,15 +5,18 @@ $(".start-survey").click(function (event) {
 $(".q-btn").click(function (event) {
   event.preventDefault();
   nextQuestion();
-  co
 });
 $(".question").on("change", "input", function () {
   $(".question.q-active .ans-wrap").removeClass("ans-selected");
   $(this).parent().addClass("ans-selected");
 });
 
+var index_question = 0
+
 function startQuiz() {
   $("#q-loader").show();
+  
+  console.log('thu tu tren',index_question)
   setTimeout(function () {
     $(".survey-intro").hide();
     $("#q-loader").hide();
@@ -24,20 +27,24 @@ function startQuiz() {
     $("#clock").show();
 
     //countdown
-    window.count = 30
+    window.count = 20
       console.log(count)
       //document.getElementById("clock").innerHTML = time
-      window.time = setInterval(function(){
+    let  time = setInterval(function(){
         document.getElementById("clock").innerHTML = count
         count--
-        if (count < 0) clearInterval(time)
+        console.log(count)
+        window.time = count
     },1000) 
   }, 500);
 }
 
 function nextQuestion() {
-  window.count = 30
+  window.count = 20
+  
   if ($(".question.q-active .ans").is(":checked")) {
+    index_question ++
+    window.index_q = index_question
     $("#q-loader").show();
     setTimeout(function () {
       $("#q-loader").hide();
