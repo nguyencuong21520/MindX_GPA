@@ -7,7 +7,7 @@ const view = {
             for (let i = 0; i < data.length; i++) {
                 let htmlMobile = `<div class="card">
                     <div class="card-body text-center">
-                        <h1>MindX Team</h1>
+                        <h1>${data[i].name}</h1>
                         <p class="timer${data[i].id}">Timer: </p>
                         <p>Score: 1500</p>
                         <button id="bt${data[i].id}" type="button" class="btn btn-success">Remove</button>

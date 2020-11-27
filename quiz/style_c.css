@@ -30,9 +30,14 @@ body{
     height: 100vh;
     /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
     /* background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
-    background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg);
+    /* background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg); */
     /* background-image: url(./img/fd2a12a5892e13d5e10b455d7e25f74e.jpg); */
     /* background-image: linear-gradient(to left bottom, #c00000, #c1261f, #c03b36, #bd4d4a, #b85d5d); */
+    background-color: black
+    /* background-image: url(./img/udixemnao.gif);
+    background-repeat: no-repeat;
+    background-size: cover; */
+
   }
 /* *{
     box-sizing: border-box;

@@ -7,8 +7,9 @@ const controller = {
     controller.removeControl()
   },
   getData: async () => {
+    let room = await controller.getIdRoom()
     let result = await firebase.firestore()
-      .collection('p1')
+      .collection(room)
       .get()
     let data = utils.getDataFromDocs(result.docs)
     await model.saveListTeam(data)
@@ -23,11 +24,13 @@ const controller = {
     }
   },
   removeOnFB: async (id) => {
-    await firebase.firestore().collection('p1').doc(id).delete()
+    let room = await controller.getIdRoom()
+    await firebase.firestore().collection(room).doc(id).delete()
   },
   setUpListTeamChange: async () => {
+    let room = await controller.getIdRoom()
     let run = true;
-    firebase.firestore().collection('p1').onSnapshot(async (snapshot) => {
+    firebase.firestore().collection(room).onSnapshot(async (snapshot) => {
       if (run) {
         run = false
         return
@@ -47,5 +50,8 @@ const controller = {
 
       // }
     })
+  },
+  getIdRoom: ()=>{
+    return localStorage.getItem('room')
   }
 }

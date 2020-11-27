@@ -96,57 +96,63 @@ function generatorAns(ans) {
 goHomeEl.addEventListener('click', () => {
   // Chekc ans 
   // do something
-  localStorage.setItem('point',point)
+  localStorage.setItem('point', point)
   // back to the homepage
   window.location.href = "./end.html"
 })
-btnStart.addEventListener('click',()=>{
-  
-})
-let checkAns = () =>{btn_next.addEventListener('click',()=>{
-  // let ans = (document.querySelector('input[name=' + 'r-1' + ' ]:checked').parentElement).textContent.trim()
-  let ans = document.querySelector('input[name=' + 'r-1' + ' ]:checked').value
-  if(ans == 'true')
-  {
-    point++
-  }
-})}
-let countDownTime = (data) =>{
-  let dom1 = document.querySelector('#hint')
-  console.log("data",data)
+btnStart.addEventListener('click', () => {
 
-      //document.getElementById("clock").innerHTML = time
-    let  timer = setInterval(function(){
-      let index = window.index_q
-      if(index == undefined){
-        index = 0;
-      }
-        let t = window.time
-        let lengthOfHints = data[index].hints.length
-        let distand = Math.floor(20/(lengthOfHints + 1))
-        if (t == 19){
-          dom1.innerHTML = ''
-        }
-      for(let i=0; i<= lengthOfHints;i++){
-        if(t == distand*(lengthOfHints - i)){
+})
+let checkAns = () => {
+  btn_next.addEventListener('click', () => {
+    // let ans = (document.querySelector('input[name=' + 'r-1' + ' ]:checked').parentElement).textContent.trim()
+    let checked = document.querySelector('input[name=' + 'r-1' + ' ]:checked')
+    let ans = checked.value
+    let range = window.distaceTime
+    let realTime = window.time
+    console.log("realTime", realTime)
+    console.log(range)
+    if (ans == 'true') {
+      checked.parentElement.classList.add('q-success')
+      console.log("dung")
+      realTime>range*3 ? point = point + 200 : ''
+      realTime>range*2 ? point = point + 100 : ''
+      realTime>range*1 ? point = point + 50 : ''
+    }
+  })
+}
+let countDownTime = (data) => {
+  console.log(data)
+  let dom1 = document.querySelector('#hint')
+  let timer = setInterval(function () {
+    let index = window.index_q
+    index == undefined ? index = 0 : ''
+    console.log("index", index)
+    index == 4 ? clearInterval(timer) : ''
+    let t = window.time
+    let lengthOfHints = data[index].hints.length
+    window.distaceTime = lengthOfHints
+    let distand = Math.floor(20 / (lengthOfHints + 1))
+    t == 19 ? dom1.innerHTML = '' : ''
+    for (let i = 0; i <= lengthOfHints; i++) {
+      if (t == distand * (lengthOfHints - i)) {
+        dom1.innerHTML += `<p><img height="50px" src="./img/loading-2x.gif"> ${data[index].hints[i]['hint' +(i+1)]}</p>`
         // dom1.innerHTML += `<h1>${data[index].hints[i]}</h1>`
-        console.log(data[index].hints[i]["hint"+ (i+1)])
-        }
+        console.log(data[index].hints[i]["hint" + (i + 1)])
       }
-        
-        // if( t == 15){
-          
-        //   console.log(data[index].hints[0].hint1)
-        // }
-        // if( t == 10){
-        //   dom1.innerHTML += `<h1>${data[index].hints[1].hint2}</h1>`
-        //   console.log(data[index].hints[1].hint2)
-        // }
-    },1000) 
+    }
+
+
+  }, 1000)
 }
 
 async function main() {
   await getQuizz(level, id, generatorQuizz);
+}
+let getIncorrectAn = (data) =>{
+  for(let i = 0; i<data.length; i++){
+
+  }
 }
 
 main();

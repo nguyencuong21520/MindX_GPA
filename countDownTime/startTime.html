@@ -27,31 +27,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./mobile.css">
-    <link rel="stylesheet" href="../packet/sweetalert2.css">
-    <style>
-        a{
-            color: white;
-            text-decoration: none;
-        }
-    </style>
 
 </head>
 
 <body>
-    <!-- <div class="container">
-        <form id="test" action="#">
-            <input type="text" name="id">
-            <button title="submit">Submit</button>
-        </form>
-        
-    </div>
-    <div id="demo"></div> -->
-
     <div class="container">
-        <h1 style="text-align: center;">Input ID</h1>
         <div class="card-group">
 
             <div class="card">
+                <h1 class="text-center">Nhập Tên Phòng</h1>
                 <form id="test" action="#" class="card-body text-center">
                     <h4>Sever</h4>
                     <select name="sever" class="custom-select">
@@ -71,46 +55,20 @@
                         <option value="p5">Phòng 5</option>
                         <option value="p6">Phòng 6</option>
                     </select>
-                    <h4>Tên Nhóm</h4>
-                    <input type="text" name="id" class="form-control" placeholder="Tên Nhóm">
-                <button class="btn btn-success" title="submit">Submit</button>
+                    <button class="btn btn-success" title="submit">Submit</button>
                 </form>
             </div>
-
         </div>
-        <div style="text-align: center; margin-top: 20px">
-            <button type="button" class="btn btn-danger"><a href="./index.html">Input ID</a></button>
-            <button type="button" class="btn btn-danger"><a href="./mobile.html">Show ID running</a></button>
-        </div>
-
-
     </div>
-
-
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-
     <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyB1jA1TlnpV7r59nZ1-jZ5B9dwVssp8teg",
-            authDomain: "mindxgpa.firebaseapp.com",
-            databaseURL: "https://mindxgpa.firebaseio.com",
-            projectId: "mindxgpa",
-            storageBucket: "mindxgpa.appspot.com",
-            messagingSenderId: "31263897510",
-            appId: "1:31263897510:web:565acdd36dcb0d06618167",
-            measurementId: "G-BFEVZLB8KB"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+        let dom = document.querySelector('#test')
+        dom.onsubmit = (e) => {
+            e.preventDefault()
+            let room = dom.room.value
+            localStorage.setItem('room', room)
+            window.location.href = "./timer.html"
+        }
     </script>
-    <script src="./index.js"></script>
-    <script src="../packet/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

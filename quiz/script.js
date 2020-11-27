@@ -5,6 +5,7 @@ $(".start-survey").click(function (event) {
 $(".q-btn").click(function (event) {
   event.preventDefault();
   nextQuestion();
+  // document.querySelector('#v').classList.add('va')
 });
 $(".question").on("change", "input", function () {
   $(".question.q-active .ans-wrap").removeClass("ans-selected");
@@ -15,8 +16,7 @@ var index_question = 0
 
 function startQuiz() {
   $("#q-loader").show();
-  
-  console.log('thu tu tren',index_question)
+  document.querySelector('#ln').innerHTML ='Hãy kiên nhẫn, hint sẽ hiện ra'
   setTimeout(function () {
     $(".survey-intro").hide();
     $("#q-loader").hide();
@@ -28,20 +28,22 @@ function startQuiz() {
 
     //countdown
     window.count = 20
-      console.log(count)
       //document.getElementById("clock").innerHTML = time
     let  time = setInterval(function(){
         document.getElementById("clock").innerHTML = count
         count--
         console.log(count)
         window.time = count
+        if(index_question == 4){
+          clearInterval(time)
+          document.getElementById("clock").innerHTML = ''
+        }
     },1000) 
   }, 500);
 }
 
 function nextQuestion() {
   window.count = 20
-  
   if ($(".question.q-active .ans").is(":checked")) {
     index_question ++
     window.index_q = index_question
@@ -66,9 +68,12 @@ function nextQuestion() {
 
 function finishQuiz() {
   $("#q-loader").show();
+  document.querySelector('#ln').innerHTML = ''
+  document.querySelector('#hint').innerHTML =''
   setTimeout(function () {
     $(".survey-questions").hide();
     $("#q-loader").hide();
     $(".survey-exit").show();
   }, 500);
 }
+

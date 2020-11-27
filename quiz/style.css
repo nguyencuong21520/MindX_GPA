@@ -67,6 +67,9 @@ body {
 .q-warning {
   background: red;
 }
+.q-success{
+  background: green !important;
+}
 
 .start-survey,
 .q-btn {
@@ -140,7 +143,10 @@ body {
     transform: rotate(360deg);
   }
 }
-
+.q_leftAnfRight{
+  width: 500px;
+  height: 200px;
+}
 .quizz-image {
   width: 100%;
   height: auto;
@@ -152,4 +158,21 @@ body {
   background-color: #4e5bf2;
   width: 100px;
   height: 100px;
+}
+#hint p{
+  color: whitesmoke;
+  font-size: 30px;
+  transition: 1s;
+}
+
+#v{
+  width: 500px;
+  height: 300px;
+  background-color: #4e5bf2;
+  position: absolute;
+  display: none;
+}
+.va{
+  display: block !important;
+  z-index: 9999;
 }
