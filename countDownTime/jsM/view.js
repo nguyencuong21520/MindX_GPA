@@ -15,7 +15,7 @@ const view = {
                 </div>`
                 domMobile.innerHTML += htmlMobile
                 let D = new Date().getTime()
-                distance = (data[i].timer + 60 * 1000) - D
+                distance = (data[i].timer + 9*60 * 1000) - D
                 let t = Math.floor(distance / 1000)
                 let interval = setInterval(function () {
                     t--;
