@@ -2,21 +2,26 @@ $(".start-survey").click(function (event) {
   event.preventDefault();
   startQuiz();
 });
+var index_question = 0
 $(".q-btn").click(function (event) {
   event.preventDefault();
-  nextQuestion();
-  // document.querySelector('#v').classList.add('va')
+  // let alert = document.querySelector('#v')
+  // nextQuestion();
+  let data = JSON.parse(localStorage.getItem('arrCorrectAns'))
+  document.querySelector('#anwe').innerText = data[index_question]
+  document.querySelector('#v').classList.add('va')
+
 });
 $(".question").on("change", "input", function () {
   $(".question.q-active .ans-wrap").removeClass("ans-selected");
   $(this).parent().addClass("ans-selected");
 });
 
-var index_question = 0
+
 
 function startQuiz() {
   $("#q-loader").show();
-  document.querySelector('#ln').innerHTML ='Hãy kiên nhẫn, hint sẽ hiện ra'
+  document.querySelector('#ln').innerHTML ='Be patient , hints will appear in a moment '
   setTimeout(function () {
     $(".survey-intro").hide();
     $("#q-loader").hide();
@@ -34,7 +39,7 @@ function startQuiz() {
         count--
         console.log(count)
         window.time = count
-        if(index_question == 4){
+        if(index_question == 5){
           clearInterval(time)
           document.getElementById("clock").innerHTML = ''
         }
@@ -43,6 +48,7 @@ function startQuiz() {
 }
 
 function nextQuestion() {
+  document.querySelector('#v').classList.remove('va')
   window.count = 20
   if ($(".question.q-active .ans").is(":checked")) {
     index_question ++

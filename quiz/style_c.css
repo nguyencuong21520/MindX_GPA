@@ -147,7 +147,7 @@ html {
 
 .rule p {
     color:whitesmoke;
-    margin: 30px;
+    margin: 20px 0px;
     font-size: 20px;
     font-family: 'Goldman';
 
@@ -577,7 +577,3 @@ button{
     color: #fff;
 }
 
-.start{
-  position: absolute;
-
-}

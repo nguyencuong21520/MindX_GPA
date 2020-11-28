@@ -14,7 +14,8 @@ function getQuizz(lv, id, callback) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      callback(data);
+     callback(data);
+     getListGetCorrectAn(data)
       checkAns()
       countDownTime(data)
     })
@@ -114,7 +115,6 @@ let checkAns = () => {
     console.log(range)
     if (ans == 'true') {
       checked.parentElement.classList.add('q-success')
-      console.log("dung")
       realTime>range*3 ? point = point + 200 : ''
       realTime>range*2 ? point = point + 100 : ''
       realTime>range*1 ? point = point + 50 : ''
@@ -128,7 +128,7 @@ let countDownTime = (data) => {
     let index = window.index_q
     index == undefined ? index = 0 : ''
     console.log("index", index)
-    index == 4 ? clearInterval(timer) : ''
+    index == 5 ? clearInterval(timer) : ''
     let t = window.time
     let lengthOfHints = data[index].hints.length
     window.distaceTime = lengthOfHints
@@ -149,10 +149,18 @@ let countDownTime = (data) => {
 async function main() {
   await getQuizz(level, id, generatorQuizz);
 }
-let getIncorrectAn = (data) =>{
-  for(let i = 0; i<data.length; i++){
 
+let getListGetCorrectAn = (data) =>{
+  let arrAn = []
+  for(let i = 0; i<data.length;i++){
+    for(let j =0; j<data[i].answerOptions.length; j++){
+      let dataAns = data[i].answerOptions[j]
+      if(dataAns.isCorrect == true || dataAns.isCorrect == 'true'){
+        arrAn.push(dataAns.answerText)
+      }
+    }
   }
+  localStorage.setItem('arrCorrectAns',JSON.stringify(arrAn))
 }
 
 main();

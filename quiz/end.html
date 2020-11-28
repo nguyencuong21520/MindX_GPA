@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="container_end">
-        <p style="color:white ; font-size:40px">Chúc mừng bạn đã hoàn thành</p>
+        <p style="color:#C00000 ; font-size:40px">CONGRATULATION</p>
         <div class="w1">
             <h1>MindX Team</h1>
             <h2 id="score">Score:</h2>
@@ -38,11 +38,11 @@
                 </div>
             </div>
             <div class="answers">
-                <div class="t">Quesstion 1: NguyenVanC</div>
+                <!-- <div class="t">Quesstion 1: NguyenVanC</div>
                 <div class="t">Quesstion 2: NguyenVanC</div>
                 <div class="t">Quesstion 3: NguyenVanC</div>
                 <div class="t">Quesstion 4: NguyenVanC</div>
-                <div class="t">Quesstion 5: NguyenVanC</div>
+                <div class="t">Quesstion 5: NguyenVanC</div> -->
             </div>
             
 
@@ -54,6 +54,15 @@
     <script src="../packet/particles.js"></script>
     <script src="../packet/app.js"></script>
     <script>
+		let data = JSON.parse(localStorage.getItem('arrCorrectAns'))
+		console.log(data)
+		let dom = document.querySelector('.answers')
+		dom.innerHTML = ''
+		for(let i = 0; i < data.length; i++){
+			let crrQuesstion = `<div class="t">Quesstion ${i} : ${data[i]}</div>`
+			dom.innerHTML += crrQuesstion
+		}
+
       let t =  document.querySelector('.countdown_time')
         setTimeout(() => {
             t.classList.add('activet')
@@ -202,9 +211,9 @@ function countDownClock(dteStart,timer)
 		// Put fallback for browsers that don't support canvas here...
 	}
 					
-	if(window.intOffset <= 0) // If time is up
-    restetF()
-	else // Resersive ahoy!
+	if(window.intOffset <= 0){
+
+	} else // Resersive ahoy!
 		window.t = setTimeout("countDownClock(" + dteStart + "," + timer + ")",50);
 }
 

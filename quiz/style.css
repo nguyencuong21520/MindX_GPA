@@ -1,7 +1,8 @@
 body {
   height: 100vh;
   font-family: 'Goldman';
-  background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg);
+  /* background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg); */
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,6 +172,7 @@ body {
   background-color: #4e5bf2;
   position: absolute;
   display: none;
+  text-align: center;
 }
 .va{
   display: block !important;
