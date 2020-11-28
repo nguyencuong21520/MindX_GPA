@@ -3,6 +3,7 @@ body {
   font-family: 'Goldman';
   /* background-image: url(https://cdn3.vectorstock.com/i/1000x1000/94/47/matrix-hacker-dark-background-vector-13239447.jpg); */
   background-color: black;
+  /* background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,9 +250,40 @@ body {
   border-radius: calc(2 * var(--border-width));
   animation: moveGradient 4s alternate infinite;
 }
-
+#logo {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 250px;
+}
 @keyframes moveGradient {
   50% {
     background-position: 100% 50%;
+  }
+}
+@media (max-width: 700px){
+  #logo {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 150px;
+  }
+  body{
+    display: block;
+  }
+  #clock{
+    text-align: left;
+  }
+  .q_leftAnfRight{
+    width: 100%;
+    height: 15%;
+  }
+  #v{
+    width: 100%;
+    left: 0px;
+    top:30%
+  }
+  #hint{
+    height: 400px;
   }
 }
