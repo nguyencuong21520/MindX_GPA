@@ -17,8 +17,8 @@ const view = {
         for (let i = 0; i < data.length; i++) {
             let html = `<div class="card">
       <div class="timer timer${data[i].id}"></div>
-      <h1 style="text-align: center">${data[i].name}</h1>
-     <div style="text-align: center;"><button id="bt${data[i].id}" type="button" class="btn btn-success">Remove</button></div>   
+      <h1 style="text-align: center; color: #c00000">${data[i].name}</h1>
+     <div style="text-align: center; display:none"><button id="bt${data[i].id}" type="button" class="btn btn-success">Remove</button></div>   
      </div>`
 
             dom.innerHTML += html
